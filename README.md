@@ -1,7 +1,7 @@
 # react-redux-blog
 Example made for dev talk
 
-## Instal
+## Install
 npm install
 
 ## Start
