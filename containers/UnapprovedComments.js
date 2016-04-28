@@ -2,6 +2,7 @@ import React, { PropTypes, Component } from 'react'
 import List from '../components/List'
 import { connect } from 'react-redux'
 import { approveComment } from '../actions'
+import PageTitle from '../components/PageTitle'
 
 class UnapproveComments extends Component {
 	render() {
@@ -19,7 +20,7 @@ class UnapproveComments extends Component {
 
 		return(
 			<div>
-        <h1>Unapproved comments</h1>
+        <PageTitle title={'Unapproved comments'}/>
 				<List collection={unapprovedComments} collectionName={'unapprovedComments'} />
 				{
           children && 

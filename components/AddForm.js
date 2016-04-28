@@ -27,7 +27,7 @@ class AddForm extends Component {
       }}>
       	{feilds.map(feild=>
       		<div>
-      			<p>{feild}</p>
+      			<span>{feild}</span>
 	        	<input ref={node => {
 	          	inputs.push(node)
 	        	}} 

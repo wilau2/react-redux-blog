@@ -3,6 +3,7 @@ import List from '../components/List'
 import { connect } from 'react-redux'
 import { getArticleComments } from '../reducers'
 import AddArticle from './AddArticle'
+import PageTitle from '../components/PageTitle'
 
 class Articles extends Component {
   render(){
@@ -15,7 +16,7 @@ class Articles extends Component {
 
     return (
       <div>
-        <h1> My super articles </h1>
+        <PageTitle title={'My super articles'}/ >
         <List collection={articles} collectionName={'articles'} />
         <AddArticle />
         {

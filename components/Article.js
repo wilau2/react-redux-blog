@@ -16,13 +16,14 @@ class Article extends Component {
 	
 		return(
 			<div>
-		  	<h1>Title : {title}</h1>
+				<h2>Article section</h2>
+		  	<h3>Title : {title}</h3>
 		  	<p>Content : {content}</p>
+
 		  	<h2>Comment section</h2>
-
 				<AddComment id={id}/>	
-
 		  	<VisibleComments comments={comments} />
+
 		 	</div>
 		)
 	}

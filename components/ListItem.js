@@ -8,8 +8,11 @@ class ListItem extends Component {
       displayItem,
       collectionName,
     } = this.props
+    const styles = {
+
+    }
     return(
-      <li>
+      <li style={styles}>
         <Link to={{pathname:`/${collectionName}/${id}`}}> {displayItem} </Link>
       </li>
     )

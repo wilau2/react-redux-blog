@@ -4,7 +4,6 @@ class Comment extends Component {
 	render(){
 		const {
 			text,
-			likeCounter,
 		} = this.props.comment
 
 		return(
