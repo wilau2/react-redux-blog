@@ -1,8 +1,7 @@
-import React, { PropTypes, Component } from 'react'
-import List from '../components/List'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getArticleComments } from '../reducers'
-import AddArticle from './AddArticle'
+import { Link } from 'react-router'
+import List from '../components/List'
 import PageTitle from '../components/PageTitle'
 
 class Articles extends Component {
@@ -10,26 +9,21 @@ class Articles extends Component {
     const {
       id,
       articles,
-      comments,
       children,
     } = this.props
 
     return (
       <div>
-        <PageTitle title={'My super articles'}/ >
+        <PageTitle title={'My super articles'} />
         <List collection={articles} collectionName={'articles'} />
-        <AddArticle />
+        <Link to={"/articles/new"}><button>new</button></Link>
         {
           children && 
           React.cloneElement(
-            children, 
-            {
-              article: articles[id],
-              comments: comments,
-            }
-          )
+            children, {
+              article: articles[id]
+            })
         }
-        
       </div>
     )
   }
@@ -38,7 +32,6 @@ class Articles extends Component {
 const mapStateToProps = (state, ownProps) => {
   return {
     articles: state.articles,
-    comments: getArticleComments(state, ownProps.params.id),
     id: ownProps.params.id,
   }
 }

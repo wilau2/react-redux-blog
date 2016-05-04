@@ -1,23 +1,23 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
+import SideMenu from './SideMenu'
+import MainPanel from './MainPanel'
 
 class App extends Component {
 	render() { 
-		const { children } = this.props
+		const {
+			children 
+		} = this.props
+		const routes = [{
+			path:"/",
+			name:"My Amazing Blog"
+		},{
+			path:"/articles",
+			name:"Articles"
+		}]
 		return(
 			<div>
-				<ul>
-					<li>
-						<Link to={"/"}> My Amazing blog </Link>
-				  </li>
-				  <li>
-				  	<Link to={"/articles"}> Articles </Link>
-				  </li>
-				  <li>
-				  	<Link to={"/unapprovedComments"}> Unapproved comments </Link>
-				  </li>
-				</ul>
-			  { children }
+				<SideMenu routes={routes}/>
+				<MainPanel page={children} />
 			</div>
 		)
 	}

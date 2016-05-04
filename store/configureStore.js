@@ -5,6 +5,7 @@ import rootReducer from '../reducers';
 
 export default function configureStore(initialState) {
 	let finalCreateStore = compose(
+    // Enable Chrome redux devtool extension
     global.devToolsExtension ? global.devToolsExtension() : f => f
   )(createStore);
 

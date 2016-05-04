@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 
-class AddForm extends Component {
+class EditForm extends Component {
 	render(){
 		const { 
 			action,
 			actionName,
 			fields,
+			values,
 			onAdd
 		} = this.props
 
@@ -30,6 +31,7 @@ class AddForm extends Component {
       		<div key={feild}>
       			<span>{feild}</span>
 	        	<input
+	        		defaultValue={values[feild]}
 	        		ref={node => {
 	          		inputs.push(node)
 	        		}}
@@ -44,4 +46,4 @@ class AddForm extends Component {
 	}
 }
 
-export default AddForm
+export default EditForm

@@ -1,4 +1,2 @@
 export const ADD_ARTICLE = 'ADD_ARTICLE'
-export const ADD_COMMENT = 'ADD_COMMENT'
-export const LIKE_COMMENT = 'LIKE_COMMENT'
-export const APPROVE_COMMENT = 'APPROVE_COMMENT'
+export const EDIT_ARTICLE = 'EDIT_ARTICLE'

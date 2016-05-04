@@ -1,29 +1,20 @@
 import React, { PropTypes, Component } from 'react'
-import AddComment from '../containers/AddComment'
-import VisibleComments from './VisibleComments'
+import { Link } from 'react-router'
 
 class Article extends Component {
 	render(){
 		const {
 			id,
-			title,
+			name,
 			content,
 		} = this.props.article
-
-		const { 
-			comments,
-		} = this.props
 	
 		return(
 			<div>
 				<h2>Article section</h2>
-		  	<h3>Title : {title}</h3>
+		  	<h3>Title : {name}</h3>
 		  	<p>Content : {content}</p>
-
-		  	<h2>Comment section</h2>
-				<AddComment id={id}/>	
-		  	<VisibleComments comments={comments} />
-
+		  	<Link to={{pathname:`/articles/${id}/edit`}}><button>Edit</button></Link>
 		 	</div>
 		)
 	}

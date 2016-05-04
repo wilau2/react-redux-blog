@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class PageTitle extends Component {
+class SectionTitle extends Component {
 	render(){
 		const{
 			title,
@@ -9,9 +9,9 @@ class PageTitle extends Component {
 			'textAlign':'center'
 		}
 		return(
-			<h1 style={styles}>{title}</h1>
+			<h2 style={styles}>{title}</h2>
 		)
 	}
 }
 
-export default PageTitle
+export default SectionTitle

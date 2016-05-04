@@ -4,18 +4,23 @@ import ListItem from './ListItem'
 class List extends Component {
   render(){
     const {
-      id,
       collection,
       collectionName,
     } = this.props
+
+    let collections = []
+    for (const id in collection){
+      collections.push(collection[id])
+    }
+
     return (
       <div>
-        {collection.length === 0 ? <p> There is nothing to display now </p> :
+        {collections.length === 0 ? <p> The list is empty </p> :
           <ul>
-            {collection.map(item =>
+            {collections.map(item =>
               <ListItem
                 key={item.id}
-                displayItem={item.id}
+                displayItem={item.name}
                 collectionName={collectionName}
                 {...item}
               />

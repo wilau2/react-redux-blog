@@ -1,37 +1,38 @@
 import * as types from '../constants/ActionTypes'
 
-const initialState = [
-  {
+const initialState = {
+  0:{
     id:0,
-    title:"First blog article",
-    content:"hey this is an article",
-    comments:[0,1,2]
-  },{
+    name:"First blog article",
+    content:"hey this is an article"
+},
+  1:{
     id:1,
-    title:"Second blog article",
-    content:"hey this is the second blog article",
-    comments:[]
+    name:"Second blog article",
+    content:"hey this is the second blog article"
   }
-]
+}
 
 const article = (state, action) => {
   switch (action.type) {
     case types.ADD_ARTICLE:
-      return {
-        id: action.id,
-        title: action.title,
-        content: action.content,
-        comments:[]
-      }
-    case types.ADD_COMMENT:
-      if (state.id === action.articleID) {
-        return Object.assign({}, state, {
-          comments: [
-            ...state.comments,
-            action.id
-          ]
-        })
-      }
+      const { id } = action
+      return Object.assign({}, state, {
+          [id]: {
+          id: action.id,
+          name: action.name,
+          content: action.content
+        }
+      })
+    case types.EDIT_ARTICLE:
+      return Object.assign({}, state, {
+          [action.id]: {
+          id: action.id,
+          name: action.name,
+          content: action.content
+        }
+      })
+
     default:
       return state
   }
@@ -40,23 +41,12 @@ const article = (state, action) => {
 const articles = (state = initialState, action) => {
   switch (action.type) {
     case types.ADD_ARTICLE:
-      return [
-        ...state,
-        article(undefined, action)
-      ]
-    case types.ADD_COMMENT:
-      return state.map(c =>
-        article(c, action)
-      )
+      return article(state, action)
+    case types.EDIT_ARTICLE:
+      return article(state, action)
     default:
       return state
   }
 }
 
 export default articles
-
-export function getCommentsIds(state, articleId) {
-  return state[articleId].comments
-}
-
-
