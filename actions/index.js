@@ -9,3 +9,12 @@ export const addArticle = (name, content) => {
     content
   }
 }
+
+export const editArticle = (id, name, content) => {
+	return {
+		type: types.EDIT_ARTICLE,
+		id,
+		name,
+		content
+	}
+}

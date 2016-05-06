@@ -24,6 +24,14 @@ const article = (state, action) => {
           content: action.content
         }
       })
+    case types.EDIT_ARTICLE:
+      return Object.assign({}, state, {
+          [action.id]: {
+          id: action.id,
+          name: action.name,
+          content: action.content
+        }
+      })
 
     default:
       return state
@@ -33,6 +41,8 @@ const article = (state, action) => {
 const articles = (state = initialState, action) => {
   switch (action.type) {
     case types.ADD_ARTICLE:
+      return article(state, action)
+    case types.EDIT_ARTICLE:
       return article(state, action)
     default:
       return state
