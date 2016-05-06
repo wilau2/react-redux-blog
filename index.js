@@ -9,7 +9,6 @@ import { syncHistoryWithStore } from 'react-router-redux'
 import Articles from './containers/Articles'
 import Article from './components/Article'
 import AddArticle from './containers/AddArticle'
-import EditArticle from './containers/EditArticle'
 
 const store = configureStore()
 const history = syncHistoryWithStore(browserHistory, store)
@@ -21,7 +20,6 @@ render(
         	<Route path="/articles" component={Articles}> 
         		<Route path="new" component={AddArticle}/>
             <Route path=":id" component={Article}/>
-            <Route path=":id/edit" component={EditArticle}/>
         	</Route>
         </Route>
       </Router>

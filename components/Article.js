@@ -14,7 +14,6 @@ class Article extends Component {
 				<h2>Article section</h2>
 		  	<h3>Title : {name}</h3>
 		  	<p>Content : {content}</p>
-		  	<Link to={{pathname:`/articles/${id}/edit`}}><button>Edit</button></Link>
 		 	</div>
 		)
 	}
