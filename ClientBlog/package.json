@@ -11,11 +11,11 @@
     "type": "git",
     "url": "TBD"
   },
+  "author": "William Lauze",
   "license": "MIT",
   "bugs": {
     "url": "TBD"
   },
-  "homepage": "http://redux.js.org",
   "dependencies": {
     "babel-polyfill": "^6.3.14",
     "history": "^2.0.0",
