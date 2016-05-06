@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { addArticle } from '../actions'
 import { connect } from 'react-redux'
-import AddForm from '../components/AddForm'
+import EditableForm from '../components/EditableForm'
 import SectionTitle from '../components/SectionTitle'
 
 class AddArticle extends Component {
@@ -13,10 +13,11 @@ class AddArticle extends Component {
 		return(
 			<div>
 				<SectionTitle title={'Adding Article'}/>
-				<AddForm 
-					onAdd={(inputs) => dispatch(addArticle(inputs[0].value, inputs[1].value))} 
-					fields ={['name','content']}
-					actionName={'Add Article'} 
+				<EditableForm 
+					onAction = {(inputs) => dispatch(addArticle(inputs[0].value, inputs[1].value))} 
+					actionName = {'Add Article'} 
+					fields = {['name','content']}
+					redirect = {"/articles"}
 				/>
 			</div>
 		)
