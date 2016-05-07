@@ -92,3 +92,5 @@ pids
 
 ##test log
 frontend/test/log/
+
+*dist

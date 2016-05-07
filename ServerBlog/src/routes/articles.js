@@ -1,11 +1,13 @@
-var express = require('express'),
-  router = express.Router();
+import express from  'express'
+  
+let router = express.Router();
 
-var articleCollectionName = 'articles';
+const articleCollectionName = 'articles';
 
 router.get('/', function(request, response) {
   //TBD
   console.log("not implemented yet")
+  console.log("will2")
 });
 
 router.post('/', function(request, response) {
@@ -16,6 +18,7 @@ router.post('/', function(request, response) {
 router.put('/:id', function(request, response) {
  	//TBD
   console.log("not implemented yet")
+  console.log("asd")
 });
 
-module.exports = router;
+export default router

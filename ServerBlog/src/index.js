@@ -1,8 +1,8 @@
-var articles = require('./routes/articles'),
-		express = require('express');
+import express from 'express'
+import articles from './routes/articles'
 
-var app = new express()
-var port = 3001
+let app = new express()
+const port = 3001
 
 //Routes
 app.use('/articles', articles);
