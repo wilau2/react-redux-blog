@@ -1,8 +1,11 @@
 import express from 'express'
 import articles from './routes/articles'
+import bodyParser from 'body-parser'
+
 
 let app = new express()
 const port = 3001
+app.use(bodyParser.json());
 
 //Routes
 app.use('/articles', articles);
